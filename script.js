@@ -9,12 +9,29 @@ function getComputerChoice(compChoice) {
     }
     return compChoice;
 }
-
 console.log(getComputerChoice());
-
 function getHumanChoice(humanChoice) {
     humanChoice = prompt("Rock, paper or scissors?", '');
-    return humanChoice;
+    return humanChoice.toLowerCase();
 };
 
-console.log(getHumanChoice());
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound(humanChoice, compChoice) {
+    if (humanChoice === compChoice) {
+        console.log("Draw!");
+    } else if (humanChoice === 'rock' && compChoice === 'paper'
+        || humanChoice === 'paper' && compChoice === 'scissors'
+        || humanChoice === 'scissors' && compChoice === 'rock') {
+        
+        console.log(`Computer earns ${++computerScore} scores!`);
+    } else {
+        console.log(`You win! You earned ${++humanScore} scores!`)
+    }
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+console.log(playRound(humanSelection, computerSelection));
