@@ -40,6 +40,7 @@ function playRound(humanChoice, computerChoice) {
 
 function playGame() {
     for (let i = 0; i < 5; i++) {
+        console.log("Round " + (i+1));
         console.log(playRound());
         console.log(`You got ${humanScore}`);
         console.log(`Computer got ${computerScore}`);
