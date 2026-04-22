@@ -11,14 +11,16 @@ function getComputerChoice() {
 
 let humanScore = 0;
 let computerScore = 0;
+
 console.log(`Your score is ${humanScore}`);
 console.log(`Computer's score is ${computerScore}`);
+
 function playRound(humanChoice, computerChoice) {
     function getHumanCoice() {
     let choice = prompt("Rock, Paper or scissors?", '');
     return choice.toLowerCase();
 }
-    humanChoice = getHumanCoice().toLowerCase();
+    humanChoice = getHumanCoice();
     computerChoice = getComputerChoice();
     if (humanChoice === computerChoice) {
         return 'Tie'
@@ -26,21 +28,21 @@ function playRound(humanChoice, computerChoice) {
         || humanChoice === 'paper' && computerChoice === 'scissors'
         || humanChoice === 'scissors' && computerChoice === 'rock') {
             computerScore = ++computerScore;
-            return 'You lost this time...'
+            return `You lost this time, ${computerChoice} beats ${humanChoice}.`
         } else if (humanChoice === 'rock' && computerChoice === 'scissors'
             || humanChoice === 'scissors' && computerChoice === 'paper' 
             || humanChoice === 'paper' && computerChoice === 'rock'
         ) {
             humanScore = ++humanScore;
-            return 'You win the round!'
+            return `You win the round, ${humanChoice} beats ${computerChoice}!`
         }
 }
 
 function playGame() {
     for (let i = 0; i < 5; i++) {
         console.log(playRound());
-        console.log(`Your score is ${humanScore}`);
-        console.log(`Computers score is ${computerScore}`);
+        console.log(`You got ${humanScore}`);
+        console.log(`Computer got ${computerScore}`);
     }
     if (humanScore === computerScore) {
         return "It's Draw! Reload the page to play one more time."
