@@ -15,11 +15,12 @@ let computerScore = 0;
 console.log(`Your score is ${humanScore}`);
 console.log(`Computer's score is ${computerScore}`);
 
-function playRound(humanChoice, computerChoice) {
-    function getHumanCoice() {
+function getHumanCoice() {
     let choice = prompt("Rock, Paper or scissors?", '');
     return choice.toLowerCase();
 }
+
+function playRound(humanChoice, computerChoice) {
     humanChoice = getHumanCoice();
     computerChoice = getComputerChoice();
     if (humanChoice === computerChoice) {
