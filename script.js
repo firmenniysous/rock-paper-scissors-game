@@ -15,9 +15,20 @@ let computerScore = 0;
 console.log(`Your score is ${humanScore}`);
 console.log(`Computer's score is ${computerScore}`);
 
-function getHumanCoice() {
-    let choice = prompt("Rock, Paper or scissors?", '');
-    return choice.toLowerCase();
+let rock = document.getElementById("rock");
+let scissors = document.getElementById("scissors");
+let paper = document.getElementById("paper");
+
+function getHumanCoice(choice) {
+    rock.addEventListener("click", () => console.log('rock'));
+    scissors.addEventListener("click", () => console.log('scissors'));
+    paper.addEventListener("click", () => console.log('paper'));
+    if (rock) {
+        choice = rock;
+    } else if (paper) {
+        choice = paper;
+    } else {choice = scissors};
+    return choice;
 }
 
 function playRound(humanChoice, computerChoice) {
@@ -39,19 +50,5 @@ function playRound(humanChoice, computerChoice) {
         }
 }
 
-function playGame() {
-    for (let i = 0; i < 5; i++) {
-        console.log("Round " + (i+1));
-        console.log(playRound());
-        console.log(`You got ${humanScore}`);
-        console.log(`Computer got ${computerScore}`);
-    }
-    if (humanScore === computerScore) {
-        return "It's Draw! Reload the page to play one more time."
-    } else if (humanScore > computerScore) {
-        return 'YOU WIN THE GAME! Reload the page to play one more time.'
-    } else {
-        return 'You lost the game. Reload the page to retry!'
-    }
-}
-console.log(playGame());
+
+getHumanCoice(); //just checking that function is working. Next time delete this line and write playGame function
