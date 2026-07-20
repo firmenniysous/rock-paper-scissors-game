@@ -48,4 +48,4 @@ scissors.addEventListener("click", () => {
     playRound('scissors', getComputerChoice);
 });
 
-//Make a function that makes a game play until one the of players get 5 points.
+//Make a function that makes a game play until one the of players get 5 points. Remove all unnecessary console messages.
