@@ -20,14 +20,11 @@ let scissors = document.getElementById("scissors");
 let paper = document.getElementById("paper");
 
 function getHumanCoice(choice) {
-    rock.addEventListener("click", () => console.log('rock'));
-    scissors.addEventListener("click", () => console.log('scissors'));
-    paper.addEventListener("click", () => console.log('paper'));
     if (rock) {
-        choice = rock;
+        choice = 'rock';
     } else if (paper) {
-        choice = paper;
-    } else {choice = scissors};
+        choice = 'paper';
+    } else {choice = 'scissors'};
     return choice;
 }
 
@@ -35,20 +32,24 @@ function playRound(humanChoice, computerChoice) {
     humanChoice = getHumanCoice();
     computerChoice = getComputerChoice();
     if (humanChoice === computerChoice) {
-        return 'Tie'
+        console.log('Tie');
+        console.log(`Your score is ${humanScore}`);
+        console.log(`Computer score is ${computerScore}`);
     } else if (humanChoice === 'rock' && computerChoice === 'paper'
         || humanChoice === 'paper' && computerChoice === 'scissors'
         || humanChoice === 'scissors' && computerChoice === 'rock') {
-            computerScore = ++computerScore;
-            return `You lost this time, ${computerChoice} beats ${humanChoice}.`
+            console.log(`You lost this time, ${computerChoice} beats ${humanChoice}.`);
+            console.log(`Your score is ${humanScore}`);
+            console.log(`Computer score is ${++computerScore}.`);
         } else if (humanChoice === 'rock' && computerChoice === 'scissors'
             || humanChoice === 'scissors' && computerChoice === 'paper' 
             || humanChoice === 'paper' && computerChoice === 'rock'
         ) {
-            humanScore = ++humanScore;
-            return `You win the round, ${humanChoice} beats ${computerChoice}!`
+            console.log(`You win the round, ${humanChoice} beats ${computerChoice}!`);
+            console.log(`Your score is ${++humanScore}`);
+            console.log(`Computer score is ${computerScore}`);
         }
 }
-
-
-getHumanCoice(); //just checking that function is working. Next time delete this line and write playGame function
+rock.addEventListener("click", playRound);
+paper.addEventListener("click", playRound);
+scissors.addEventListener("click", playRound);
