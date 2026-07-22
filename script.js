@@ -15,7 +15,7 @@ let rock = document.getElementById("rock");
 let scissors = document.getElementById("scissors");
 let paper = document.getElementById("paper");
 let displayResult = document.getElementById("display-result");
-
+displayResult.textContent = 'First who reaches 5 points win the game';
 function playRound(humanChoice) {
     computerChoice = getComputerChoice();
     if (humanChoice === computerChoice) {
@@ -52,4 +52,3 @@ paper.addEventListener("click", () => {
 scissors.addEventListener("click", () => {
     playRound('scissors');
 });
-//Make a function that makes a game play until one the of players get 5 points. Remove all unnecessary console messages.
