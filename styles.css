@@ -1,0 +1,32 @@
+body {
+    background-color: rgb(252, 206, 150);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#game-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin: 35px 0;
+}
+
+.rps {
+    width: 300px;
+    height: 150px;
+    font-size: 50px;
+    background-color: rgb(253, 234, 208);
+    font-weight: 800;
+}
+
+#display-result {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 500;
+}
+
+#scores {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 15px;
+    font-size: 25px;
+}

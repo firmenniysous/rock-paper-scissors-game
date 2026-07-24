@@ -16,7 +16,7 @@ let scissors = document.getElementById("scissors");
 let paper = document.getElementById("paper");
 
 let displayResult = document.getElementById("display-result");
-displayResult.textContent = 'First who reaches 5 points wins the game';
+displayResult.textContent = 'First who reaches 5 points wins the game.';
 let displayHumanScore = document.getElementById('display-human-score');
 let displayCompScore = document.getElementById('display-comp-score');
 displayHumanScore.textContent = 'Your score:';
