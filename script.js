@@ -11,16 +11,18 @@ function getComputerChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
-let rock = document.getElementById("rock");
-let scissors = document.getElementById("scissors");
-let paper = document.getElementById("paper");
+let rock = document.createElement("button");
+rock.textContent = 'Rock';
+rock.setAttribute('id', 'rock');
 
-let displayResult = document.getElementById("display-result");
-displayResult.textContent = 'First who reaches 5 points wins the game.';
-let displayHumanScore = document.getElementById('display-human-score');
-let displayCompScore = document.getElementById('display-comp-score');
-displayHumanScore.textContent = 'Your score:';
-displayCompScore.textContent = 'Computer score:';
+let scissors = document.createElement("button");
+scissors.textContent = 'Scissors';
+scissors.setAttribute('id', 'scissors');
+
+let paper = document.createElement("button");
+paper.textContent = 'Paper'
+paper.setAttribute('id', 'paper');
+let body = document.querySelector("body");
 
 function playRound(humanChoice) {
     computerChoice = getComputerChoice();
@@ -54,6 +56,15 @@ function playRound(humanChoice) {
             humanScore = 0;
         }
     }
+
+let startGame = document.getElementById("start-game");
+
+startGame.addEventListener("click", e => {
+    body.appendChild(rock);
+    body.appendChild(paper);
+    body.appendChild(scissors);
+    e.target.remove();
+});
 
 rock.addEventListener("click", () => {
     playRound('rock');
