@@ -23,6 +23,10 @@ let paper = document.createElement("button");
 paper.textContent = 'Paper'
 paper.setAttribute('id', 'paper');
 let body = document.querySelector("body");
+let displayResult = document.createElement("p");
+let displayHumanScore = document.createElement("p");
+let displayCompScore = document.createElement("p");
+let endGame = false;
 
 function playRound(humanChoice) {
     computerChoice = getComputerChoice();
@@ -50,19 +54,32 @@ function playRound(humanChoice) {
             displayResult.textContent = 'Congratulations, you win the game!'
             humanScore = 0;
             computerScore = 0;
+            instruction.after(startGame);
+            rock.remove();
+            paper.remove();
+            scissors.remove();
         } else if (computerScore === 5) {
-            displayResult.textContent = 'Congr... oh. Ok, next time maybe:/'
+            displayResult.textContent = 'You lose the game. Try again.'
             computerScore = 0;
             humanScore = 0;
+            instruction.after(startGame);
+            rock.remove();
+            paper.remove();
+            scissors.remove();
         }
     }
 
 let startGame = document.getElementById("start-game");
+let instruction = document.getElementById("instruction");
 
 startGame.addEventListener("click", e => {
+    instruction.textContent = 'First who reaches 5 points wins the game!'
     body.appendChild(rock);
     body.appendChild(paper);
     body.appendChild(scissors);
+    body.appendChild(displayResult);
+    body.appendChild(displayHumanScore);
+    body.appendChild(displayCompScore);
     e.target.remove();
 });
 
