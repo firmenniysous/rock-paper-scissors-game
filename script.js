@@ -22,11 +22,12 @@ scissors.setAttribute('id', 'scissors');
 let paper = document.createElement("button");
 paper.textContent = 'Paper'
 paper.setAttribute('id', 'paper');
+
 let body = document.querySelector("body");
+
 let displayResult = document.createElement("p");
 let displayHumanScore = document.createElement("p");
 let displayCompScore = document.createElement("p");
-let endGame = false;
 
 function playRound(humanChoice) {
     computerChoice = getComputerChoice();
@@ -38,7 +39,7 @@ function playRound(humanChoice) {
         || humanChoice === 'paper' && computerChoice === 'scissors'
         || humanChoice === 'scissors' && computerChoice === 'rock') {
             ++computerScore;    
-            displayResult.textContent = 'You lose this time.';    
+            displayResult.textContent = `You lose this time, ${computerChoice} beats ${humanChoice}.`;    
             displayHumanScore.textContent = `Your score: ${humanScore}`;
             displayCompScore.textContent = `Computer score: ${computerScore}`;
         } else if (humanChoice === 'rock' && computerChoice === 'scissors'
