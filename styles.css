@@ -3,20 +3,16 @@ body {
     color:rgb(59, 47, 32)
 }
 
-#game-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 80px;
-    margin: 35px 0;
-}
-
-.rps {
+#start-game {
+    background-color: brown;
+    color: white;
     width: 300px;
-    height: 150px;
-    font-size: 60px;
-    background-color: rgb(253, 234, 208);
-    font-weight: 800;
-    color: rgb(34, 27, 20)
+    height: 120px;
+    font-size: 48px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 15px;
+    border-radius: 19px;
+    border-style: none;
 }
 
 #display-result {
