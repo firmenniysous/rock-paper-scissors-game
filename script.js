@@ -25,6 +25,8 @@ paper.setAttribute('id', 'paper');
 
 let body = document.querySelector("body");
 
+let rps = document.getElementById("rps");
+
 let displayResult = document.createElement("p");
 let displayHumanScore = document.createElement("p");
 let displayCompScore = document.createElement("p");
@@ -82,9 +84,9 @@ startGame.addEventListener("click", e => {
     displayHumanScore.textContent = 'Your score: 0';
     displayCompScore.textContent = 'Computer score: 0';
     instruction.textContent = 'First who reaches 5 points wins the game!'
-    body.appendChild(rock);
-    body.appendChild(paper);
-    body.appendChild(scissors);
+    rps.appendChild(rock);
+    rps.appendChild(paper);
+    rps.appendChild(scissors);
     body.appendChild(displayResult);
     body.appendChild(displayHumanScore);
     body.appendChild(displayCompScore);
