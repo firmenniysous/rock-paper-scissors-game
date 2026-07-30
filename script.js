@@ -10,18 +10,26 @@ function getComputerChoice() {
 }
 let humanScore = 0;
 let computerScore = 0;
+let humanWinnings = 0;
+let computerWinnings = 0;
 
 let rock = document.createElement("button");
-rock.textContent = 'Rock';
+rock.textContent = 'ROCK';
 rock.setAttribute('id', 'rock');
+rock.classList.add('playing-buttons');
 
 let scissors = document.createElement("button");
-scissors.textContent = 'Scissors';
+scissors.textContent = 'SCISSORS';
 scissors.setAttribute('id', 'scissors');
+scissors.classList.add('playing-buttons');
 
 let paper = document.createElement("button");
-paper.textContent = 'Paper'
+paper.textContent = 'PAPER';
 paper.setAttribute('id', 'paper');
+paper.classList.add('playing-buttons');
+
+let restartAllWinnings = document.createElement('button');
+restartAllWinnings.textContent = 'Restart Winnings';
 
 let body = document.querySelector("body");
 
@@ -30,6 +38,8 @@ let rps = document.getElementById("rps");
 let displayResult = document.createElement("p");
 let displayHumanScore = document.createElement("p");
 let displayCompScore = document.createElement("p");
+let displayHumanWinnings = document.getElementById("human-winnings");
+let displayComputerWinnings = document.getElementById('computer-winnings');
 
 function playRound(humanChoice) {
     computerChoice = getComputerChoice();
@@ -63,6 +73,13 @@ function playRound(humanChoice) {
             computerScore = 0;
             displayHumanScore.remove();
             displayCompScore.remove();
+            ++humanWinnings;
+            displayHumanWinnings.textContent = `Your winnings: ${humanWinnings}`;
+            displayComputerWinnings.textContent = `Computer winnings: ${computerWinnings}`;
+            body.appendChild(displayHumanWinnings);
+            body.appendChild(displayComputerWinnings);
+            body.appendChild(restartAllWinnings);
+            instruction.textContent = 'To start a new game press START.'
         } else if (computerScore === 5) {
             displayResult.textContent = 'You lose the game. Try again.'
             instruction.after(startGame);
@@ -73,6 +90,13 @@ function playRound(humanChoice) {
             computerScore = 0;
             displayHumanScore.remove();
             displayCompScore.remove();
+            ++computerWinnings;
+            displayHumanWinnings.textContent = `Your winnings: ${humanWinnings}`;
+            displayComputerWinnings.textContent = `Computer winnings: ${computerWinnings}`;
+            body.appendChild(displayHumanWinnings);
+            body.appendChild(displayComputerWinnings);
+            body.appendChild(restartAllWinnings);
+            instruction.textContent = 'To start a new game press START.'
         }
     }
 
@@ -91,6 +115,9 @@ startGame.addEventListener("click", e => {
     body.appendChild(displayHumanScore);
     body.appendChild(displayCompScore);
     e.target.remove();
+    displayHumanWinnings.remove();
+    displayComputerWinnings.remove();
+    restartAllWinnings.remove();
 });
 
 rock.addEventListener("click", () => {
@@ -102,3 +129,11 @@ paper.addEventListener("click", () => {
 scissors.addEventListener("click", () => {
     playRound('scissors');
 });
+
+restartAllWinnings.addEventListener("click", () => {
+    humanWinnings = 0;
+    computerWinnings = 0;
+    displayHumanWinnings.textContent = `Your winnings: ${humanWinnings}`;
+    displayComputerWinnings.textContent = `Computer winnings: ${computerWinnings}`;
+    restartAllWinnings.remove();
+})
