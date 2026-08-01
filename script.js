@@ -28,8 +28,9 @@ paper.textContent = 'PAPER';
 paper.setAttribute('id', 'paper');
 paper.classList.add('playing-buttons');
 
-let restartAllWinnings = document.createElement('button');
-restartAllWinnings.textContent = 'Restart Winnings';
+let restartWinnings = document.createElement('button');
+restartWinnings.textContent = 'RESTART';
+restartWinnings.setAttribute("id", "restart-winnings");
 
 let body = document.querySelector("body");
 
@@ -40,6 +41,10 @@ let displayHumanScore = document.createElement("p");
 let displayCompScore = document.createElement("p");
 let displayHumanWinnings = document.getElementById("human-winnings");
 let displayComputerWinnings = document.getElementById('computer-winnings');
+let startStrong = document.createElement("strong");
+startStrong.textContent = 'START';
+let dot = document.createElement('span');
+dot.textContent = '.';
 
 function playRound(humanChoice) {
     computerChoice = getComputerChoice();
@@ -78,8 +83,10 @@ function playRound(humanChoice) {
             displayComputerWinnings.textContent = `Computer winnings: ${computerWinnings}`;
             body.appendChild(displayHumanWinnings);
             body.appendChild(displayComputerWinnings);
-            body.appendChild(restartAllWinnings);
-            instruction.textContent = 'To start a new game press START.'
+            body.appendChild(restartWinnings);
+            instruction.textContent = `To start a new game press `;
+            instruction.appendChild(startStrong);
+            instruction.appendChild(dot);
         } else if (computerScore === 5) {
             displayResult.textContent = 'You lose the game. Try again.'
             instruction.after(startGame);
@@ -95,8 +102,10 @@ function playRound(humanChoice) {
             displayComputerWinnings.textContent = `Computer winnings: ${computerWinnings}`;
             body.appendChild(displayHumanWinnings);
             body.appendChild(displayComputerWinnings);
-            body.appendChild(restartAllWinnings);
-            instruction.textContent = 'To start a new game press START.'
+            body.appendChild(restartWinnings);
+            instruction.textContent = `To start a new game press `;
+            instruction.appendChild(startStrong);
+            instruction.appendChild(dot);
         }
     }
 
@@ -117,7 +126,7 @@ startGame.addEventListener("click", e => {
     e.target.remove();
     displayHumanWinnings.remove();
     displayComputerWinnings.remove();
-    restartAllWinnings.remove();
+    restartWinnings.remove();
 });
 
 rock.addEventListener("click", () => {
@@ -130,10 +139,10 @@ scissors.addEventListener("click", () => {
     playRound('scissors');
 });
 
-restartAllWinnings.addEventListener("click", () => {
+restartWinnings.addEventListener("click", e => {
     humanWinnings = 0;
     computerWinnings = 0;
     displayHumanWinnings.textContent = `Your winnings: ${humanWinnings}`;
     displayComputerWinnings.textContent = `Computer winnings: ${computerWinnings}`;
-    restartAllWinnings.remove();
+    e.target.remove();
 })

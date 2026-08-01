@@ -23,6 +23,17 @@ h1 {
     letter-spacing: 3px;
 }
 
+#restart-winnings {
+    width: 100px;
+    height: 40px;
+    color: rgb(209, 187, 187);
+    background-color: rgb(71, 22, 22);
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 3px;
+    font-weight: 700;
+}
+
 #instruction {
     font-size: 2em;
 }
