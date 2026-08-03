@@ -31,14 +31,21 @@ paper.classList.add('playing-buttons');
 let restartWinnings = document.createElement('button');
 restartWinnings.textContent = 'RESTART';
 restartWinnings.setAttribute("id", "restart-winnings");
+restartWinnings.style.backgroundColor = 'rgb(71, 22, 22)';
 
 let body = document.querySelector("body");
 
 let rps = document.getElementById("rps");
 
 let displayResult = document.createElement("p");
+displayResult.setAttribute('id', 'display-result');
+
 let displayHumanScore = document.createElement("p");
+displayHumanScore.setAttribute('id', 'display-human-score');
+
 let displayCompScore = document.createElement("p");
+displayCompScore.setAttribute('id', 'display-comp-score');
+
 let displayHumanWinnings = document.getElementById("human-winnings");
 let displayComputerWinnings = document.getElementById('computer-winnings');
 let startStrong = document.createElement("strong");
@@ -111,6 +118,8 @@ function playRound(humanChoice) {
 
 let startGame = document.getElementById("start-game");
 let instruction = document.getElementById("instruction");
+let scores = document.createElement('div');
+scores.setAttribute('id', 'scores');
 
 startGame.addEventListener("click", e => {
     displayResult.textContent = 'Choose the option.'
@@ -121,8 +130,9 @@ startGame.addEventListener("click", e => {
     rps.appendChild(paper);
     rps.appendChild(scissors);
     body.appendChild(displayResult);
-    body.appendChild(displayHumanScore);
-    body.appendChild(displayCompScore);
+    body.appendChild(scores);
+    scores.appendChild(displayHumanScore);
+    scores.appendChild(displayCompScore);
     e.target.remove();
     displayHumanWinnings.remove();
     displayComputerWinnings.remove();
@@ -145,4 +155,4 @@ restartWinnings.addEventListener("click", e => {
     displayHumanWinnings.textContent = `Your winnings: ${humanWinnings}`;
     displayComputerWinnings.textContent = `Computer winnings: ${computerWinnings}`;
     e.target.remove();
-})
+});
