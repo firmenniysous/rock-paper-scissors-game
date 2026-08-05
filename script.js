@@ -29,7 +29,7 @@ paper.setAttribute('id', 'paper');
 paper.classList.add('playing-buttons');
 
 let restartWinnings = document.createElement('button');
-restartWinnings.textContent = 'RESTART';
+restartWinnings.textContent = 'RESTART WINNINGS';
 restartWinnings.setAttribute("id", "restart-winnings");
 restartWinnings.style.backgroundColor = 'rgb(71, 22, 22)';
 
@@ -42,9 +42,13 @@ displayResult.setAttribute('id', 'display-result');
 
 let displayHumanScore = document.createElement("p");
 displayHumanScore.setAttribute('id', 'display-human-score');
+displayHumanScore.classList.add('display-score');
 
 let displayCompScore = document.createElement("p");
 displayCompScore.setAttribute('id', 'display-comp-score');
+displayCompScore.classList.add('display-score');
+
+let winningsBox = document.getElementById("winnings-box");
 
 let displayHumanWinnings = document.getElementById("human-winnings");
 let displayComputerWinnings = document.getElementById('computer-winnings');
@@ -88,9 +92,10 @@ function playRound(humanChoice) {
             ++humanWinnings;
             displayHumanWinnings.textContent = `Your winnings: ${humanWinnings}`;
             displayComputerWinnings.textContent = `Computer winnings: ${computerWinnings}`;
-            body.appendChild(displayHumanWinnings);
-            body.appendChild(displayComputerWinnings);
+            winningsBox.appendChild(displayHumanWinnings);
+            winningsBox.appendChild(displayComputerWinnings);
             body.appendChild(restartWinnings);
+            restartWinnings.style.backgroundColor = 'rgb(71, 22, 22)'
             instruction.textContent = `To start a new game press `;
             instruction.appendChild(startStrong);
             instruction.appendChild(dot);
@@ -110,6 +115,7 @@ function playRound(humanChoice) {
             body.appendChild(displayHumanWinnings);
             body.appendChild(displayComputerWinnings);
             body.appendChild(restartWinnings);
+            restartWinnings.style.backgroundColor = 'rgb(71, 22, 22)'
             instruction.textContent = `To start a new game press `;
             instruction.appendChild(startStrong);
             instruction.appendChild(dot);
@@ -154,5 +160,5 @@ restartWinnings.addEventListener("click", e => {
     computerWinnings = 0;
     displayHumanWinnings.textContent = `Your winnings: ${humanWinnings}`;
     displayComputerWinnings.textContent = `Computer winnings: ${computerWinnings}`;
-    e.target.remove();
+    e.target.style.backgroundColor = 'grey';
 });
