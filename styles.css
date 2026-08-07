@@ -8,13 +8,15 @@ body {
 }
 
 h1 {
-    font-size: 57px;
+    font-size: 40px;
     margin-bottom: -10px;
+    text-align: center;
 }
 
 .playing-buttons {
-    width: 200px;
-    height: 90px;
+    width: 50vw;
+    max-width: 250px;
+    height: 8vh;
     font-size: 30px;
     background-color: rgb(27, 27, 59);
     color:bisque;
@@ -36,11 +38,17 @@ h1 {
 
 #instruction {
     font-size: 2em;
+    text-align: center;
+    width: 90%;
 }
 
 #rps {
     display: flex;
+    flex-direction: column;
     gap: 2vw;
+    gap: 1vh;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 #start-game {
@@ -60,12 +68,16 @@ h1 {
     text-align: center;
     font-size: 22px;
     font-weight: 700;
+    width: 80%;
 }
 
 #scores {
     display: flex;
-    gap: 10vw;
     font-size: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    
 }
 
 #display-human-score {
@@ -84,13 +96,19 @@ h1 {
 }
 
 .winnings {
-    font-size: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
     font-weight: 800;
     width: 350px;
-    padding: 20px;
+    padding: 5px;
     text-align: center;
     border: none;
     border-radius: 100px;
+    width: 50vw;
+    height: 10vh;
+    max-width: 280px;
 }
 
 #winnings-box {

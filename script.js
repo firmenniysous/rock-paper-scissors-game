@@ -112,8 +112,8 @@ function playRound(humanChoice) {
             ++computerWinnings;
             displayHumanWinnings.textContent = `Your winnings: ${humanWinnings}`;
             displayComputerWinnings.textContent = `Computer winnings: ${computerWinnings}`;
-            body.appendChild(displayHumanWinnings);
-            body.appendChild(displayComputerWinnings);
+            winningsBox.appendChild(displayHumanWinnings);
+            winningsBox.appendChild(displayComputerWinnings);
             body.appendChild(restartWinnings);
             restartWinnings.style.backgroundColor = 'rgb(71, 22, 22)'
             instruction.textContent = `To start a new game press `;
