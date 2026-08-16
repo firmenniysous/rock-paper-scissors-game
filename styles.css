@@ -1,0 +1,157 @@
+body {
+    background-color: bisque;
+    color:rgb(59, 47, 32);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: -10px;
+    text-align: center;
+}
+
+.playing-buttons {
+    width: 50vw;
+    max-width: 250px;
+    height: 8vh;
+    font-size: 30px;
+    background-color: rgb(27, 27, 59);
+    color:bisque;
+    border-radius: 10px;
+    border: none;
+    letter-spacing: 3px;
+}
+
+#restart-winnings {
+    width: 100px;
+    height: 40px;
+    color: rgb(209, 187, 187);
+    background-color: rgb(71, 22, 22);
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 3px;
+    font-weight: 700;
+}
+
+#instruction {
+    font-size: 2em;
+    text-align: center;
+    width: 90%;
+}
+
+#rps {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    gap: 1vh;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#start-game {
+    background-color: brown;
+    color: white;
+    width: 300px;
+    height: 120px;
+    font-size: 48px;
+    letter-spacing: 15px;
+    border-radius: 19px;
+    border-style: none;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+#display-result {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    width: 80%;
+    height: 40px;
+}
+
+#scores {
+    display: flex;
+    font-size: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    
+}
+
+#display-human-score {
+    background-color: rgb(124, 197, 124);
+}
+
+#display-comp-score {
+    background-color: rgb(214, 111, 111);
+}
+
+.display-score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    width: 25vw;
+    min-width: 150px;
+    height: 70px;
+    max-width: 400px;
+    text-align: center;
+    margin: 5px 0;
+}
+
+.winnings {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: 800;
+    width: 350px;
+    padding: 5px;
+    text-align: center;
+    border: none;
+    border-radius: 100px;
+    width: 50vw;
+    height: 10vh;
+    max-width: 280px;
+}
+
+#winnings-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+}
+
+#human-winnings {
+    background-color: rgb(25, 71, 25);
+    color: white;    
+}
+
+#computer-winnings {
+    background-color: rgb(131, 41, 41);
+    color: white;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    height: 41px;
+    width: 100vw;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
