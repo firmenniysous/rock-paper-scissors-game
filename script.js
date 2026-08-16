@@ -34,6 +34,7 @@ restartWinnings.setAttribute("id", "restart-winnings");
 restartWinnings.style.backgroundColor = 'rgb(71, 22, 22)';
 
 let body = document.querySelector("body");
+let main = document.querySelector("main");
 
 let rps = document.getElementById("rps");
 let hOne = document.querySelector("h1");
@@ -95,7 +96,7 @@ function playRound(humanChoice) {
             displayComputerWinnings.textContent = `Computer winnings: ${computerWinnings}`;
             winningsBox.appendChild(displayHumanWinnings);
             winningsBox.appendChild(displayComputerWinnings);
-            body.appendChild(restartWinnings);
+            main.appendChild(restartWinnings);
             restartWinnings.style.backgroundColor = 'rgb(71, 22, 22)'
             instruction.textContent = `To start a new game press `;
             instruction.appendChild(startStrong);
@@ -115,7 +116,7 @@ function playRound(humanChoice) {
             displayComputerWinnings.textContent = `Computer winnings: ${computerWinnings}`;
             winningsBox.appendChild(displayHumanWinnings);
             winningsBox.appendChild(displayComputerWinnings);
-            body.appendChild(restartWinnings);
+            main.appendChild(restartWinnings);
             restartWinnings.style.backgroundColor = 'rgb(71, 22, 22)'
             instruction.textContent = `To start a new game press `;
             instruction.appendChild(startStrong);
@@ -136,8 +137,8 @@ startGame.addEventListener("click", e => {
     rps.appendChild(rock);
     rps.appendChild(paper);
     rps.appendChild(scissors);
-    body.appendChild(displayResult);
-    body.appendChild(scores);
+    main.appendChild(displayResult);
+    main.appendChild(scores);
     scores.appendChild(displayHumanScore);
     scores.appendChild(displayCompScore);
     e.target.remove();
@@ -165,13 +166,13 @@ restartWinnings.addEventListener("click", e => {
     e.target.remove();
     let areYouSureQuestion = document.createElement('p');
     areYouSureQuestion.textContent = "Are you sure you want to remove all the winnings?"
-    body.appendChild(areYouSureQuestion);
+    main.appendChild(areYouSureQuestion);
     let yesButton = document.createElement("button");
     yesButton.textContent = "Yes";
     let noButton = document.createElement('button');
     noButton.textContent = "No";
-    body.appendChild(yesButton);
-    body.appendChild(noButton);
+    main.appendChild(yesButton);
+    main.appendChild(noButton);
     yesButton.addEventListener("click", e => {
         humanWinnings = 0;
         computerWinnings = 0;
@@ -181,11 +182,11 @@ restartWinnings.addEventListener("click", e => {
         noButton.remove();
         areYouSureQuestion.remove();
         hOne.after(instruction);
-        body.appendChild(startGame);
-        body.appendChild(winningsBox);
+        main.appendChild(startGame);
+        main.appendChild(winningsBox);
         winningsBox.appendChild(displayHumanWinnings);
         winningsBox.appendChild(displayComputerWinnings);
-});
+    });
     noButton.addEventListener("click", e => {
         displayHumanWinnings.textContent = `Your winnings: ${humanWinnings}`;
         displayComputerWinnings.textContent = `Computer winnings: ${computerWinnings}`;
@@ -193,11 +194,11 @@ restartWinnings.addEventListener("click", e => {
         e.target.remove();
         areYouSureQuestion.remove();
         hOne.after(instruction);
-        body.appendChild(startGame);
-        body.appendChild(winningsBox);
+        main.appendChild(startGame);
+        main.appendChild(winningsBox);
         winningsBox.appendChild(displayHumanWinnings);
         winningsBox.appendChild(displayComputerWinnings);
-        body.appendChild(displayResult);
-        body.appendChild(restartWinnings);
+        main.appendChild(displayResult);
+        main.appendChild(restartWinnings);
     })
 });
