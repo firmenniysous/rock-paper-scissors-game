@@ -36,6 +36,7 @@ restartWinnings.style.backgroundColor = 'rgb(71, 22, 22)';
 let body = document.querySelector("body");
 
 let rps = document.getElementById("rps");
+let hOne = document.querySelector("h1");
 
 let displayResult = document.createElement("p");
 displayResult.setAttribute('id', 'display-result');
@@ -156,9 +157,47 @@ scissors.addEventListener("click", () => {
 });
 
 restartWinnings.addEventListener("click", e => {
-    humanWinnings = 0;
-    computerWinnings = 0;
-    displayHumanWinnings.textContent = `Your winnings: ${humanWinnings}`;
-    displayComputerWinnings.textContent = `Computer winnings: ${computerWinnings}`;
-    e.target.style.backgroundColor = 'grey';
+    instruction.remove();
+    startGame.remove();
+    displayResult.remove();
+    displayHumanWinnings.remove();
+    displayComputerWinnings.remove();
+    e.target.remove();
+    let areYouSureQuestion = document.createElement('p');
+    areYouSureQuestion.textContent = "Are you sure you want to remove all the winnings?"
+    body.appendChild(areYouSureQuestion);
+    let yesButton = document.createElement("button");
+    yesButton.textContent = "Yes";
+    let noButton = document.createElement('button');
+    noButton.textContent = "No";
+    body.appendChild(yesButton);
+    body.appendChild(noButton);
+    yesButton.addEventListener("click", e => {
+        humanWinnings = 0;
+        computerWinnings = 0;
+        displayHumanWinnings.textContent = `Your winnings: ${humanWinnings}`;
+        displayComputerWinnings.textContent = `Computer winnings: ${computerWinnings}`;
+        e.target.remove();
+        noButton.remove();
+        areYouSureQuestion.remove();
+        hOne.after(instruction);
+        body.appendChild(startGame);
+        body.appendChild(winningsBox);
+        winningsBox.appendChild(displayHumanWinnings);
+        winningsBox.appendChild(displayComputerWinnings);
+});
+    noButton.addEventListener("click", e => {
+        displayHumanWinnings.textContent = `Your winnings: ${humanWinnings}`;
+        displayComputerWinnings.textContent = `Computer winnings: ${computerWinnings}`;
+        yesButton.remove();
+        e.target.remove();
+        areYouSureQuestion.remove();
+        hOne.after(instruction);
+        body.appendChild(startGame);
+        body.appendChild(winningsBox);
+        winningsBox.appendChild(displayHumanWinnings);
+        winningsBox.appendChild(displayComputerWinnings);
+        body.appendChild(displayResult);
+        body.appendChild(restartWinnings);
+    })
 });
