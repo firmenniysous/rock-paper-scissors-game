@@ -130,18 +130,18 @@ h1 {
 
 #winnings-box {
     display: flex;
-    flex-direction: column;
     align-items: center;
     gap: 22px;
+    margin-top: 10px;
 }
 
 #human-winnings {
-    background-color: rgb(25, 71, 25);
+    background-color: rgb(25, 71, 25, 0.8);
     color: white;    
 }
 
 #computer-winnings {
-    background-color: rgb(131, 41, 41);
+    background-color: rgba(131, 41, 41, 0.8);
     color: white;
 }
 
