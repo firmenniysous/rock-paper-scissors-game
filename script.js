@@ -76,7 +76,7 @@ let russianFlag = document.createElement("img");
 russianFlag.src = "images/ru.svg";
 russianFlag.classList.add("flags");
 let russianCaption = document.createElement("p");
-russianCaption.textContent = "Russian";
+russianCaption.textContent = "Русский";
 chooseLanguage.addEventListener("click", e => {
     e.target.remove();
     startGame.remove();
