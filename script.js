@@ -62,6 +62,8 @@ dot.textContent = '.';
 let chooseLanguage = document.getElementById("choose-language");
 let figure = document.querySelector("figure");
 let englishLanguage = document.createElement("a");
+let listOfLanguages = document.createElement("list");
+listOfLanguages.setAttribute("id", "list-of-languages");
 englishLanguage.href = "index.html"
 englishLanguage.classList.add("language");
 let englishFlag = document.createElement("img");
@@ -83,10 +85,11 @@ chooseLanguage.addEventListener("click", e => {
     winningsBox.remove();
     figure.remove();
     instruction.textContent = "Choose a language.";
-    main.appendChild(englishLanguage);
+    main.appendChild(listOfLanguages);
+    listOfLanguages.appendChild(englishLanguage);
     englishLanguage.appendChild(englishFlag);
     englishLanguage.appendChild(englishCaption);
-    main.appendChild(russianLanguage);
+    listOfLanguages.appendChild(russianLanguage);
     russianLanguage.appendChild(russianFlag);
     russianLanguage.appendChild(russianCaption);
 });
