@@ -59,6 +59,27 @@ startStrong.textContent = 'START';
 let dot = document.createElement('span');
 dot.textContent = '.';
 
+let chooseLanguage = document.getElementById("choose-language");
+let figure = document.querySelector("figure");
+let englishLanguage = document.createElement("a");
+englishLanguage.href = "index.html"
+englishLanguage.classList.add("english-language");
+let englishFlag = document.createElement("img");
+englishFlag.src = "images/gb.svg";
+englishFlag.classList.add("flags");
+let englishCaption = document.createElement("p");
+englishCaption.textContent = "English";
+chooseLanguage.addEventListener("click", e => {
+    e.target.remove();
+    startGame.remove();
+    winningsBox.remove();
+    figure.remove();
+    instruction.textContent = "Choose a language.";
+    main.appendChild(englishLanguage);
+    englishLanguage.appendChild(englishFlag);
+    englishLanguage.appendChild(englishCaption);
+});
+
 function playRound(humanChoice) {
     computerChoice = getComputerChoice();
     if (humanChoice === computerChoice) {
