@@ -36,19 +36,20 @@ main {
 
 .flags {
     width: 100px;
+    height: 60px;
     border: none;
     border-radius: 18px;
     padding: 5px;
+    object-fit: cover;
 }
 
-.english-language {
+.language {
     text-decoration: none;
     color: black;
     display: flex;
     align-items: center;
     gap: 15px;
     font-size: 20px;
-
 }
 
 h1 {

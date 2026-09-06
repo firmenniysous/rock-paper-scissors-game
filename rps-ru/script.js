@@ -63,12 +63,20 @@ let chooseLanguage = document.getElementById("choose-language");
 let figure = document.querySelector("figure");
 let englishLanguage = document.createElement("a");
 englishLanguage.href = "../index.html"
-englishLanguage.classList.add("english-language");
+englishLanguage.classList.add("language");
 let englishFlag = document.createElement("img");
 englishFlag.src = "../images/gb.svg";
 englishFlag.classList.add("flags");
 let englishCaption = document.createElement("p");
-englishCaption.textContent = "Английский (English)";
+englishCaption.textContent = "English";
+let russianLanguage = document.createElement("a");
+russianLanguage.href = "index.html"
+russianLanguage.classList.add("language");
+let russianFlag = document.createElement("img");
+russianFlag.src = "../images/ru.svg";
+russianFlag.classList.add("flags");
+let russianCaption = document.createElement("p");
+russianCaption.textContent = "Русский";
 chooseLanguage.addEventListener("click", e => {
     e.target.remove();
     startGame.remove();
@@ -78,6 +86,9 @@ chooseLanguage.addEventListener("click", e => {
     main.appendChild(englishLanguage);
     englishLanguage.appendChild(englishFlag);
     englishLanguage.appendChild(englishCaption);
+    main.appendChild(russianLanguage);
+    russianLanguage.appendChild(russianFlag);
+    russianLanguage.appendChild(russianCaption);
 });
 
 function playRound(humanChoice) {
