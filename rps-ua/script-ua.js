@@ -98,14 +98,14 @@ function playRound(humanChoice) {
     computerChoice = getComputerChoice();
     if (humanChoice === computerChoice) {
         displayResult.textContent = `Нічия!`;
-        displayHumanScore.textContent = `Ваши очки: ${humanScore}`;
+        displayHumanScore.textContent = `Ваші очки: ${humanScore}`;
         displayCompScore.textContent = `Очки ШІ: ${computerScore}`;
     } else if (humanChoice === 'rock' && computerChoice === 'paper'
         || humanChoice === 'paper' && computerChoice === 'scissors'
         || humanChoice === 'scissors' && computerChoice === 'rock') {
             ++computerScore;    
             displayResult.textContent = `Цього разу вам не пощастило: ваш вибір: ${computerChoice}, вибір ШІ: ${humanChoice}.`;    
-            displayHumanScore.textContent = `Ваши очки: ${humanScore}`;
+            displayHumanScore.textContent = `Ваші очки: ${humanScore}`;
             displayCompScore.textContent = `Очки ШІ: ${computerScore}`;
         } else if (humanChoice === 'rock' && computerChoice === 'scissors'
             || humanChoice === 'scissors' && computerChoice === 'paper' 
@@ -113,7 +113,7 @@ function playRound(humanChoice) {
         ) {
             ++humanScore;
             displayResult.textContent = `Ви виграли цей раунд, ваш вибір: ${humanChoice}, вибір ШІ: ${computerChoice}!`
-            displayHumanScore.textContent = `Ваши очки: ${humanScore}`;
+            displayHumanScore.textContent = `Ваші очки: ${humanScore}`;
             displayCompScore.textContent = `Очки ШІ: ${computerScore}`;
         }
         if (humanScore === 5) {
@@ -127,7 +127,7 @@ function playRound(humanChoice) {
             displayHumanScore.remove();
             displayCompScore.remove();
             ++humanWinnings;
-            displayHumanWinnings.textContent = `Ваши перемоги: ${humanWinnings}`;
+            displayHumanWinnings.textContent = `Ваші перемоги: ${humanWinnings}`;
             displayComputerWinnings.textContent = `Перемоги ШІ: ${computerWinnings}`;
             winningsBox.appendChild(displayHumanWinnings);
             winningsBox.appendChild(displayComputerWinnings);
@@ -147,7 +147,7 @@ function playRound(humanChoice) {
             displayHumanScore.remove();
             displayCompScore.remove();
             ++computerWinnings;
-            displayHumanWinnings.textContent = `Ваши перемоги: ${humanWinnings}`;
+            displayHumanWinnings.textContent = `Ваші перемоги: ${humanWinnings}`;
             displayComputerWinnings.textContent = `Перемоги ШІ: ${computerWinnings}`;
             winningsBox.appendChild(displayHumanWinnings);
             winningsBox.appendChild(displayComputerWinnings);
@@ -166,7 +166,7 @@ scores.setAttribute('id', 'scores');
 
 startGame.addEventListener("click", e => {
     displayResult.textContent = 'Обрати предмет.'
-    displayHumanScore.textContent = 'Ваши очки: 0';
+    displayHumanScore.textContent = 'Ваші очки: 0';
     displayCompScore.textContent = 'Очки ШІ: 0';
     instruction.textContent = 'Перший, хто набрав 5 очків, виграв раунд!'
     rps.appendChild(rock);
@@ -212,7 +212,7 @@ restartWinnings.addEventListener("click", e => {
     yesButton.addEventListener("click", e => {
         humanWinnings = 0;
         computerWinnings = 0;
-        displayHumanWinnings.textContent = `Ваши перемоги: ${humanWinnings}`;
+        displayHumanWinnings.textContent = `Ваші перемоги: ${humanWinnings}`;
         displayComputerWinnings.textContent = `Перемоги ШІ: ${computerWinnings}`;
         e.target.remove();
         noButton.remove();
@@ -225,7 +225,7 @@ restartWinnings.addEventListener("click", e => {
         main.appendChild(chooseLanguage);
     });
     noButton.addEventListener("click", e => {
-        displayHumanWinnings.textContent = `Ваши перемоги: ${humanWinnings}`;
+        displayHumanWinnings.textContent = `Ваші перемоги: ${humanWinnings}`;
         displayComputerWinnings.textContent = `Перемоги ШІ: ${computerWinnings}`;
         yesButton.remove();
         e.target.remove();
