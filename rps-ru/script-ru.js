@@ -72,7 +72,7 @@ englishFlag.classList.add("flags");
 let englishCaption = document.createElement("p");
 englishCaption.textContent = "English";
 let russianLanguage = document.createElement("a");
-russianLanguage.href = "index.html"
+russianLanguage.href = "index-ru.html"
 russianLanguage.classList.add("language");
 let russianFlag = document.createElement("img");
 russianFlag.src = "../images/ru.svg";
