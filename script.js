@@ -180,6 +180,7 @@ startGame.addEventListener("click", e => {
     displayHumanWinnings.remove();
     displayComputerWinnings.remove();
     restartWinnings.remove();
+    chooseLanguage.remove();
 });
 
 rock.addEventListener("click", () => {
@@ -221,6 +222,7 @@ restartWinnings.addEventListener("click", e => {
         main.appendChild(winningsBox);
         winningsBox.appendChild(displayHumanWinnings);
         winningsBox.appendChild(displayComputerWinnings);
+        main.appendChild(chooseLanguage);
     });
     noButton.addEventListener("click", e => {
         displayHumanWinnings.textContent = `Your winnings: ${humanWinnings}`;
