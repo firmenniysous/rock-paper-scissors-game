@@ -79,6 +79,14 @@ russianFlag.src = "images/ru.svg";
 russianFlag.classList.add("flags");
 let russianCaption = document.createElement("p");
 russianCaption.textContent = "Русский";
+let ukrainianLanguage = document.createElement("a");
+ukrainianLanguage.href = "rps-ua/index-ua.html"
+ukrainianLanguage.classList.add("language");
+let ukrainianFlag = document.createElement("img");
+ukrainianFlag.src = "images/ua.svg";
+ukrainianFlag.classList.add("flags");
+let ukrainianCaption = document.createElement("p");
+ukrainianCaption.textContent = "Українська";
 chooseLanguage.addEventListener("click", e => {
     e.target.remove();
     startGame.remove();
@@ -92,6 +100,9 @@ chooseLanguage.addEventListener("click", e => {
     listOfLanguages.appendChild(russianLanguage);
     russianLanguage.appendChild(russianFlag);
     russianLanguage.appendChild(russianCaption);
+    listOfLanguages.appendChild(ukrainianLanguage);
+    ukrainianLanguage.appendChild(ukrainianFlag);
+    ukrainianLanguage.appendChild(ukrainianCaption);
 });
 
 function playRound(humanChoice) {
