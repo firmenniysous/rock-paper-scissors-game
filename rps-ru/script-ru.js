@@ -213,11 +213,14 @@ restartWinnings.addEventListener("click", e => {
     e.target.remove();
     let areYouSureQuestion = document.createElement('p');
     areYouSureQuestion.textContent = "Вы уверены, что хотите сбросить все победы? Возврат будет невозможен."
+    areYouSureQuestion.classList.add('are-you-sure');
     main.appendChild(areYouSureQuestion);
     let yesButton = document.createElement("button");
     yesButton.textContent = "Да";
+    yesButton.classList.add('yes-button');
     let noButton = document.createElement('button');
     noButton.textContent = "Нет";
+    noButton.classList.add('no-button')
     main.appendChild(yesButton);
     main.appendChild(noButton);
     yesButton.addEventListener("click", e => {

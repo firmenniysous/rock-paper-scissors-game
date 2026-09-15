@@ -81,6 +81,28 @@ h1 {
     font-weight: 700;
 }
 
+.yes-button, .no-button {
+    width: 215px;
+    height: 78px;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 15px;
+    color: white;
+    background: brown;
+    border: none;
+    border-radius: 15px
+}
+
+.yes-button {
+    background-color: rgb(56, 112, 56);
+}
+
+.are-you-sure {
+    font-size: larger;
+    text-align: center;
+    width: 424px;
+}
+
 #instruction {
     font-size: 2em;
     text-align: center;

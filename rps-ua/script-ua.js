@@ -212,12 +212,15 @@ restartWinnings.addEventListener("click", e => {
     displayComputerWinnings.remove();
     e.target.remove();
     let areYouSureQuestion = document.createElement('p');
+    areYouSureQuestion.classList.add('are-you-sure');
     areYouSureQuestion.textContent = "Ви впевнині, що хочете сбросити усі перемоги? Повернення буде неможливо."
     main.appendChild(areYouSureQuestion);
     let yesButton = document.createElement("button");
     yesButton.textContent = "Так";
+    yesButton.classList.add('yes-button');
     let noButton = document.createElement('button');
     noButton.textContent = "Ні";
+    noButton.classList.add('no-button');
     main.appendChild(yesButton);
     main.appendChild(noButton);
     yesButton.addEventListener("click", e => {
