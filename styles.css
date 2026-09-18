@@ -17,8 +17,39 @@ main {
     align-items: center;
 }
 
-img {
-    width: 70px;
+#choose-language-figure {
+    display: flex;
+    align-items: center;
+    background-color: rgb(52, 145, 145);
+    color: white;
+    border-radius: 15px;
+    padding: 5px;
+    margin: 0;
+}
+
+#choose-language {
+    padding: 0;
+    background: 0;
+    border: 0;
+    margin: 20px;
+}
+
+.flags {
+    width: 100px;
+    height: 60px;
+    border: none;
+    border-radius: 18px;
+    padding: 5px;
+    object-fit: cover;
+}
+
+.language {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 20px;
 }
 
 h1 {
@@ -48,6 +79,28 @@ h1 {
     border: none;
     border-radius: 3px;
     font-weight: 700;
+}
+
+.yes-button, .no-button {
+    width: 215px;
+    height: 78px;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 15px;
+    color: white;
+    background: brown;
+    border: none;
+    border-radius: 15px
+}
+
+.yes-button {
+    background-color: rgb(56, 112, 56);
+}
+
+.are-you-sure {
+    font-size: larger;
+    text-align: center;
+    width: 424px;
 }
 
 #instruction {
