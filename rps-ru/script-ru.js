@@ -1,11 +1,11 @@
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3) + 1;
     if (choice === 1) {
-        return 'rock'
+        return 'камень'
     } else if (choice === 2) {
-        return 'paper'
+        return 'бумага'
     } else {
-        return 'scissors'
+        return 'ножницы'
     }
 }
 let humanScore = 0;
@@ -111,16 +111,16 @@ function playRound(humanChoice) {
         displayResult.textContent = `Ничья!`;
         displayHumanScore.textContent = `Ваши очки: ${humanScore}`;
         displayCompScore.textContent = `Очки ИИ: ${computerScore}`;
-    } else if (humanChoice === 'rock' && computerChoice === 'paper'
-        || humanChoice === 'paper' && computerChoice === 'scissors'
-        || humanChoice === 'scissors' && computerChoice === 'rock') {
+    } else if (humanChoice === 'камень' && computerChoice === 'бумага'
+        || humanChoice === 'бумага' && computerChoice === 'ножницы'
+        || humanChoice === 'ножницы' && computerChoice === 'камень') {
             ++computerScore;    
             displayResult.textContent = `В этот раз вам не повезло: выбор ИИ: ${computerChoice}, а ваш: ${humanChoice}.`;    
             displayHumanScore.textContent = `Ваши очки: ${humanScore}`;
             displayCompScore.textContent = `Очки ИИ: ${computerScore}`;
-        } else if (humanChoice === 'rock' && computerChoice === 'scissors'
-            || humanChoice === 'scissors' && computerChoice === 'paper' 
-            || humanChoice === 'paper' && computerChoice === 'rock'
+        } else if (humanChoice === 'камень' && computerChoice === 'ножницы'
+            || humanChoice === 'ножницы' && computerChoice === 'бумага' 
+            || humanChoice === 'бумага' && computerChoice === 'камень'
         ) {
             ++humanScore;
             displayResult.textContent = `Вы выиграли раунд, ваш выбор: ${humanChoice}, а выбор ИИ: ${computerChoice}!`
@@ -195,13 +195,13 @@ startGame.addEventListener("click", e => {
 });
 
 rock.addEventListener("click", () => {
-    playRound('rock');
+    playRound('камень');
 });
 paper.addEventListener("click", () => {
-    playRound('paper');
+    playRound('ножницы');
 });
 scissors.addEventListener("click", () => {
-    playRound('scissors');
+    playRound('бумага');
 });
 
 restartWinnings.addEventListener("click", e => {
